@@ -29,8 +29,16 @@ function imageClick (evt) {
 if (!evt.target.classList.contains('gallery__image')){
     return
 }
-basicLightbox.create(`
+const instance = basicLightbox.create(`
 <img width="1400" height="900" src="${evt.target.dataset.source}">
-`).show()
- 
+`,
+{ 
+
+})
+instance.show()
+ gallery.addEventListener('keydown', (event) => {
+  if (event.code === "Escape") {
+    instance.close();
+  }
+ })
 }
