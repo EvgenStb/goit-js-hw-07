@@ -22,11 +22,11 @@ return items.map(({preview, original, description}) => {
   </div>`;
 }).join('')}
 
-new SimpleLightbox('.gallery a', {
+const galeryModlalWindows = new SimpleLightbox('.gallery a', {
     captions: true,
     captionsData: "alt",
     captionDelay: 250,
 });
-
+galeryModlalWindows.on('show.simplelightbox');;
 
 
